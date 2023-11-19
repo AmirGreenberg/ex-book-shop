@@ -47,6 +47,10 @@ function onNextPage() {
     nextPage()
     renderBooks()
 }
+function onPrevPage() {
+    prevPage()
+    renderBooks()
+}
 
 function onRemoveBook(bookId) {
     removeBook(bookId)

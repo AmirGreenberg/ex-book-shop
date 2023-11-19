@@ -5,6 +5,7 @@ const PAGE_SIZE = 4
 
 var gBooks
 var gCurrPageIdx = 0
+
 var gBookNames = [
     'Hagiraf shegired lo baaf',
     'When Nitche cried',
@@ -35,6 +36,11 @@ function getBookNames() {
 
 function nextPage() {
     gCurrPageIdx++
+    if (gCurrPageIdx * PAGE_SIZE >= gBooks.length) gCurrPageIdx = 0
+}
+
+function prevPage() {
+    gCurrPageIdx--
     if (gCurrPageIdx * PAGE_SIZE >= gBooks.length) gCurrPageIdx = 0
 }
 
