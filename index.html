@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title></title>
+</head>
+
+<body onload="onInit()">
+    <h1>Books CRUDL with MVC</h1>
+
+    <section class="book-filter">
+        <fieldset>
+            <legend>Filter & Sorting</legend>
+
+            <div class="filter-by">
+                <select onchange="onSetFilterBy({bookName: this.value})"></select>
+                
+                <label>
+                    <span>Min Rate:</span>
+                    <input type="range" min="0" max="10" value="0" 
+                           onchange="this.title=this.value;onSetFilterBy({minRate: +this.value})" />
+                </label>
+            </div>
+            
+            <div class="sort-by">
+                <select onchange="onSetSortBy()">
+                    <option value="">Select Sorting</option>
+                    <option value="bookName">By BookName</option>
+                    <option value="rate">Rate</option>
+                </select>
+                <label>
+                    <span>Descending</span>
+                    <input class="sort-desc" type="checkbox" oninput="onSetSortBy()" />
+                </label>
+            </div>
+        </fieldset> 
+
+    </section>
+
+    <section>
+        <div class="actions">
+            <button title="Create New Book" onclick="onAddBook()">Add Book</button>
+            <button title="Next Page" onclick="onNextPage()">Next Page</button>
+            <button title="Previous Page" onclick="onPrevPage()">Previous Page</button>
+        </div>
+        <section class="books-container"></section>
+    </section>
+
+    <div class="modal">
+        <h3></h3>
+        <h4 class="modalPrice">Price: <span></span> </h4>
+        <h4 class="modalRate">Rate: <span></span> </h4>
+        <h5>Book Description</h5>
+        <p></p>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+
+    <div class="user-msg"></div>
+
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/books.service.js"></script>
+    <script src="js/books.controller.js"></script>
+</body>
+
+</html>
