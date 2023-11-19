@@ -5,6 +5,7 @@ const PAGE_SIZE = 4
 
 var gBooks
 var gCurrPageIdx = 0
+var gIdCounter = 0
 
 var gBookNames = [
     'Hagiraf shegired lo baaf',
@@ -13,6 +14,7 @@ var gBookNames = [
     '1984',
 ]
 var gFilterBy = { minRate: 0, bookName: '' }
+var gFavLayout = 'cards'
 
 _createBooks()
 
@@ -122,7 +124,7 @@ function isNextBtnDisabled() {
 
 function _createBook(bookName) {
     return {
-        id: makeId(),
+        id: gIdCounter++,
         bookName,
         price: getRandomIntInclusive(5, 50),
         imgUrl: `img/${bookName}.png`,

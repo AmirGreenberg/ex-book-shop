@@ -5,33 +5,64 @@ function onInit() {
     renderBookNames()
     renderBooks()
 }
+//table
+// function renderBooks() {
+//     var books = getBooks()
+//     console.log('books: ', books)
 
-function renderBooks() {
-    var books = getBooks()
-    console.log('books: ', books)
-
-    var strHtmls = books.map(
-        (book) => `
-        <article class="book-preview">
-            <button title="Delete book" class="btn-remove" onclick="onRemoveBook('${book.id}')">X</button>
+//     var strHtmls = books.map(
+//         (book) => `
+//         <article class="book-preview">
+//             <button title="Delete book" class="btn-remove" onclick="onRemoveBook('${book.id}')">X</button>
             
-            <h2>${book.bookName}</h2>
-            <p>Price: <span>${book.price}$</span> </p>
-            <p>Rate: <span>${book.rate}</span> </p>
+//             <h2>${book.bookName}</h2>
+//             <p>Price: <span>${book.price}$</span> </p>
+//             <p>Rate: <span>${book.rate}</span> </p>
             
-            <button onclick="onReadBook('${book.id}')">Details</button>
-            <button onclick="onUpdateBook('${book.id}')">Update</button>
+//             <button onclick="onReadBook('${book.id}')">Details</button>
+//             <button onclick="onUpdateBook('${book.id}')">Update</button>
 
-            <img title="Photo of ${book.bookName}" 
-                src="img/${book.bookName}.png" 
-                alt="Book by ${book.bookName}"
-                onerror="this.src='img/default.png'">
-        </article> 
-    `
-    )
-    document.querySelector('.books-container').innerHTML = strHtmls.join('')
-    renderPagesBtn()
-}
+//             <img title="Photo of ${book.bookName}" 
+//                 src="img/${book.bookName}.png" 
+//                 alt="Book by ${book.bookName}"
+//                 onerror="this.src='img/default.png'">
+//         </article> 
+//     `
+//     )
+//     document.querySelector('.books-container').innerHTML = strHtmls.join('')
+//     renderPagesBtn()
+// }
+
+//cards
+// function renderBooks() {
+//     var books = getBooks()
+//     console.log('books: ', books)
+
+//     var strHtmls = books.map(
+//         (book) => `
+
+
+
+//         <article class="book-preview">
+//             <button title="Delete book" class="btn-remove" onclick="onRemoveBook('${book.id}')">X</button>
+            
+//             <h2>${book.bookName}</h2>
+//             <p>Price: <span>${book.price}$</span> </p>
+//             <p>Rate: <span>${book.rate}</span> </p>
+            
+//             <button onclick="onReadBook('${book.id}')">Details</button>
+//             <button onclick="onUpdateBook('${book.id}')">Update</button>
+
+//             <img title="Photo of ${book.bookName}" 
+//                 src="img/${book.bookName}.png" 
+//                 alt="Book by ${book.bookName}"
+//                 onerror="this.src='img/default.png'">
+//         </article> 
+//     `
+//     )
+//     document.querySelector('.books-container').innerHTML = strHtmls.join('')
+//     renderPagesBtn()
+// }
 
 function renderPagesBtn() {
     var elPrevPage = document.querySelector('.prevPage')

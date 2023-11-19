@@ -153,3 +153,33 @@ button:hover:disabled {
     background-color: rgb(95, 93, 93);
     color: linen;
 }
+
+table {
+    position: relative;
+
+    flex-basis: 200px;
+    flex-grow: 1;
+
+    padding: 5px;
+    background-color: white;
+    border: 1px solid darkgray;
+    border-radius: 0.2em;
+    border-collapse: collapse;
+
+    color: #222;
+    text-align: center;
+}
+
+td {
+    position: relative;
+
+
+    padding: 5px;
+    background-color: white;
+    border: 1px solid darkgray;
+    border-radius: 0.2em;
+    border-collapse: collapse;
+
+    color: #222;
+    text-align: center;
+}

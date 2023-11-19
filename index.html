@@ -17,14 +17,20 @@
 
             <div class="filter-by">
                 <select onchange="onSetFilterBy({bookName: this.value})"></select>
-                
+
                 <label>
                     <span>Min Rate:</span>
-                    <input type="range" min="0" max="10" value="0" 
-                           onchange="this.title=this.value;onSetFilterBy({minRate: +this.value})" />
+                    <input type="range" min="0" max="10" value="0"
+                        onchange="this.title=this.value;onSetFilterBy({minRate: +this.value})" />
                 </label>
             </div>
-            
+
+            <div class="favLayout">
+                <button title="tableLayout" onclick="onSetLayout()">Table</button>
+                <button title="cardsLayout" onclick="onSetLayout()">Cards</button>
+
+            </div>
+
             <div class="sort-by">
                 <select onchange="onSetSortBy()">
                     <option value="">Select Sorting</option>
@@ -36,7 +42,7 @@
                     <input class="sort-desc" type="checkbox" oninput="onSetSortBy()" />
                 </label>
             </div>
-        </fieldset> 
+        </fieldset>
 
     </section>
 
@@ -46,7 +52,38 @@
             <button class="prevPage" title="Previous Page" onclick="onPrevPage()">Previous Page</button>
             <button class="nextPage" title="Next Page" onclick="onNextPage()">Next Page</button>
         </div>
-        <section class="books-container"></section>
+        <section class="books-container">
+            <table>
+                <thead>
+                <tbody>
+                    <tr>
+                        <th>ID </th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>s</td>
+                        <td>s</td>
+                        <td>s</td>
+                        <td>s</td>
+                    </tr>
+                    <tr>
+                        <td>s</td>
+                        <td>s</td>
+                        <td>s</td>
+                        <td>s</td>
+                    </tr>
+                    <tr>
+                        <td>s</td>
+                        <td>s</td>
+                        <td>s</td>
+                        <td>s</td>
+                    </tr>
+                </tbody>
+                </thead>
+            </table>
+        </section>
     </section>
 
     <div class="modal">
