@@ -18,7 +18,7 @@ _createBooks()
 
 function getBooks() {
     console.log('gBooks: ', gBooks)
-    
+
     var books = gBooks.filter(
         (book) =>
             book.bookName.includes(gFilterBy.bookName) &&
@@ -36,12 +36,10 @@ function getBookNames() {
 
 function nextPage() {
     gCurrPageIdx++
-    if (gCurrPageIdx * PAGE_SIZE >= gBooks.length) gCurrPageIdx = 0
 }
 
 function prevPage() {
     gCurrPageIdx--
-    if (gCurrPageIdx * PAGE_SIZE >= gBooks.length) gCurrPageIdx = 0
 }
 
 function getBooksByPrice() {
@@ -105,13 +103,21 @@ function setBookFilter(filterBy) {
 }
 
 function setBookSort(sortBy = {}) {
-    if (sortBy.rate !== undefined) {
-        gBooks.sort((c1, c2) => (c1.rate - c2.rate) * sortBy.rate)
+    if (sortBy.price !== undefined) {
+        gBooks.sort((c1, c2) => (c2.price - c1.price) * sortBy.price)
     } else if (sortBy.bookName !== undefined) {
         gBooks.sort(
             (c1, c2) => c1.bookName.localeCompare(c2.bookName) * sortBy.bookName
         )
     }
+}
+
+function isPrevBtnDisabled() {
+    return gCurrPageIdx === 0
+}
+
+function isNextBtnDisabled() {
+    return ((gCurrPageIdx+1) * PAGE_SIZE) >= gBooks.length
 }
 
 function _createBook(bookName) {
@@ -120,7 +126,7 @@ function _createBook(bookName) {
         bookName,
         price: getRandomIntInclusive(5, 50),
         imgUrl: `img/${bookName}.png`,
-        rate: getRandomInt(0,10),
+        rate: getRandomIntInclusive(0, 10),
         desc: makeLorem(),
     }
 }
@@ -133,7 +139,7 @@ function _createBooks() {
 
     gBooks = []
 
-    for (let i = 0; i < gBookNames.length ; i++) {
+    for (let i = 0; i < gBookNames.length; i++) {
         var bookName = gBookNames[i]
         gBooks.push(_createBook(bookName))
     }

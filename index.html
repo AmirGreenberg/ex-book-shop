@@ -29,7 +29,7 @@
                 <select onchange="onSetSortBy()">
                     <option value="">Select Sorting</option>
                     <option value="bookName">By BookName</option>
-                    <option value="rate">Rate</option>
+                    <option value="price">Price</option>
                 </select>
                 <label>
                     <span>Descending</span>
@@ -43,8 +43,8 @@
     <section>
         <div class="actions">
             <button title="Create New Book" onclick="onAddBook()">Add Book</button>
-            <button title="Previous Page" onclick="onPrevPage()">Previous Page</button>
-            <button title="Next Page" onclick="onNextPage()">Next Page</button>
+            <button class="prevPage" title="Previous Page" onclick="onPrevPage()">Previous Page</button>
+            <button class="nextPage" title="Next Page" onclick="onNextPage()">Next Page</button>
         </div>
         <section class="books-container"></section>
     </section>

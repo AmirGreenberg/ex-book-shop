@@ -7,10 +7,9 @@ function onInit() {
 }
 
 function renderBooks() {
-  
     var books = getBooks()
     console.log('books: ', books)
-    
+
     var strHtmls = books.map(
         (book) => `
         <article class="book-preview">
@@ -31,6 +30,17 @@ function renderBooks() {
     `
     )
     document.querySelector('.books-container').innerHTML = strHtmls.join('')
+    renderPagesBtn()
+}
+
+function renderPagesBtn() {
+    var elPrevPage = document.querySelector('.prevPage')
+    var elNextPage = document.querySelector('.nextPage')
+
+    elPrevPage.disabled = isPrevBtnDisabled()
+        
+    elNextPage.disabled = isNextBtnDisabled()
+       
 }
 
 function renderBookNames() {
@@ -142,8 +152,8 @@ function onSetSortBy() {
     if (!prop) return
 
     const sortBy = {}
-    sortBy[prop] = isDesc ? -1 : 1 
-  
+    sortBy[prop] = isDesc ? -1 : 1
+
     setBookSort(sortBy)
     renderBooks()
 }

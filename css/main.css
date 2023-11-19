@@ -1,144 +1,155 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	padding: 0 40px;
-	background-color: lightsteelblue;
-	overflow-x: hidden;
+    padding: 0 40px;
+    background-color: lightsteelblue;
+    overflow-x: hidden;
 
-	font-family: Arial, Helvetica, sans-serif;
-	color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
 }
 
 button {
-	color: whitesmoke;
-	border: 0;
-	border-radius: 0.2em;
-	background-color: rgb(99, 160, 190);
-	padding: 6px 10px;
-	margin: 2px;
-	cursor: pointer;
+    color: whitesmoke;
+    border: 0;
+    border-radius: 0.2em;
+    background-color: rgb(99, 160, 190);
+    padding: 6px 10px;
+    margin: 2px;
+    cursor: pointer;
 }
 
 button:hover {
-	color: deeppink;
+    color: deeppink;
 }
 
 .actions {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .books-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
 
-	margin-block: 1em;
+    margin-block: 1em;
 }
 
 .book-preview {
-	position: relative;
+    position: relative;
 
-	flex-basis: 200px;
-	flex-grow: 1;
+    flex-basis: 200px;
+    flex-grow: 1;
 
-	padding: 5px;
-	background-color: white;
-	border: 1px solid darkgray;
-	border-radius: 0.2em;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid darkgray;
+    border-radius: 0.2em;
 
-	color: #222;
-	text-align: center;
+    color: #222;
+    text-align: center;
 }
 
 .book-preview .btn-remove {
-	position: absolute;
-	top: 0.5em;
-	right: 0.5em;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
 }
 
 .book-preview img {
-	margin-block-start: 1em;
-	max-width: 80%;
+    margin-block-start: 1em;
+    max-width: 80%;
 }
 
 .book-preview h2 {
-	text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .book-preview p span {
-	color: tomato;
-	font-family: monospace;
-	font-size: 2em;
+    color: tomato;
+    font-family: monospace;
+    font-size: 2em;
 }
 
 .book-filter {
-	background-color: rgb(96, 122, 158);
-	padding: 20px;
-	margin: 20px 0;
+    background-color: rgb(96, 122, 158);
+    padding: 20px;
+    margin: 20px 0;
 }
 
 .book-filter fieldset {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .filter-by select,
 .sort-by select {
-	margin-inline-end: 2em;
+    margin-inline-end: 2em;
 }
 
 .filter-by select {
-	text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .modal {
-	position: absolute;
-	top: 0px;
-	right: -300px;
+    position: absolute;
+    top: 0px;
+    right: -300px;
 
-	width: 300px;
-	padding: 10px;
-	background-color: #111;
+    width: 300px;
+    padding: 10px;
+    background-color: #111;
 
-	text-align: center;
+    text-align: center;
     transition: right 0.5s;
 }
 
 .modal.open {
-	right: 0;
+    right: 0;
 }
 
 .modal h3 {
-	color: pink;
-	text-transform: capitalize;
+    color: pink;
+    text-transform: capitalize;
 }
 
 .modal h4 span {
-	color: pink;
+    color: pink;
 }
 
 .modal > p {
-	text-align: left;
+    text-align: left;
 }
 
 .user-msg {
-	position: fixed;
-	bottom: -100px;
-	right: 10px;
+    position: fixed;
+    bottom: -100px;
+    right: 10px;
 
-	background-color: #111;
-	padding: 10px;
+    background-color: #111;
+    padding: 10px;
     transition: bottom 0.5s;
 }
 
 .user-msg.open {
-	bottom: 10px;
+    bottom: 10px;
 }
 
 .highlite {
-	background-color: plum;
+    background-color: plum;
+}
+
+:disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
+}
+
+button:hover:disabled {
+    background-color: rgb(95, 93, 93);
+    color: linen;
 }
