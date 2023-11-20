@@ -52,38 +52,85 @@
             <button class="prevPage" title="Previous Page" onclick="onPrevPage()">Previous Page</button>
             <button class="nextPage" title="Next Page" onclick="onNextPage()">Next Page</button>
         </div>
-        <section class="books-container">
-            <table>
-                <thead>
-                <tbody>
-                    <tr>
-                        <th>ID </th>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Actions</th>
-                    </tr>
-                    <tr>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                    </tr>
-                    <tr>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                    </tr>
-                    <tr>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                    </tr>
-                </tbody>
-                </thead>
-            </table>
-        </section>
+        <section class="books-container"></section>
+        <!-- <main class="table">
+            <section class="table__header">
+                <div class="actions">
+                    <p title="Create New Book" onclick="onAddBook()" class="status pending">Add Book</p>
+                    <p title="Previous Page" onclick="onPrevPage()" class="status pending">Previous Page</p>
+                    <p title="Next Page" onclick="onNextPage()" class="status pending">Next Page</p>
+                </div>
+                <div class="input-group">
+                    <input type="search" placeholder="Search Data...">
+                    <img src="images/search.png" alt="">
+                </div>
+                <div class="export__file">
+                    <label for="export-file" class="export__file-btn" title="Export File"></label>
+                    <input type="checkbox" id="export-file">
+                    <div class="export__file-options">
+                        <label>Export As &nbsp; &#10140;</label>
+                        <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                        <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                        <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    </div>
+                </div>
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Title <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Price <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="books-container-cards">
+                        <tr>
+                            <td> 1 </td>
+                            <td> <img src="images/Zinzu Chan Lee.jpg" alt="">Zinzu Chan Lee</td>
+                            <td> <strong> $128.90 </strong></td>
+                            <td>
+                                <p class="status delivered">Read</p>
+                                <p class="status cancelled">Update</p>
+                                <p class="status shipped" onclick="onRemoveBook('${book.id}')">Delete</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 2 </td>
+                            <td><img src="images/Jeet Saru.jpg" alt=""> Jeet Saru </td>
+                            <td> <strong>$5350.50</strong> </td>
+                            <td>
+                                <p class="status delivered">Read</p>
+                                <p class="status cancelled">Update</p>
+                                <p class="status shipped">Delete</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td><img src="images/Sonal Gharti.jpg" alt=""> Sonal Gharti </td>
+                            <td> <strong>$210.40</strong> </td>
+                            <td>
+                                <p class="status delivered">Read</p>
+                                <p class="status cancelled">Update</p>
+                                <p class="status shipped">Delete</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 4</td>
+                            <td><img src="images/Alson GC.jpg" alt=""> Alson GC </td>
+                            <td> <strong>$149.70</strong> </td>
+                            <td>
+                                <p class="status delivered">Read</p>
+                                <p class="status cancelled">Update</p>
+                                <p class="status shipped">Delete</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </section>
+        </main> -->
     </section>
 
     <div class="modal">
@@ -99,6 +146,7 @@
 
 
     <script src="js/services/util.service.js"></script>
+    <!-- <script src="js/services/cards-script.js"></script> -->
     <script src="js/services/storage.service.js"></script>
     <script src="js/services/books.service.js"></script>
     <script src="js/books.controller.js"></script>

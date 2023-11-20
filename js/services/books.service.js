@@ -23,8 +23,8 @@ function getBooks() {
 
     var books = gBooks.filter(
         (book) =>
-            book.bookName.includes(gFilterBy.bookName) &&
-            book.rate >= gFilterBy.minRate
+        book.bookName.includes(gFilterBy.bookName) &&
+        book.rate >= gFilterBy.minRate
     )
 
     const startIdx = gCurrPageIdx * PAGE_SIZE
@@ -51,12 +51,11 @@ function getBooksByPrice() {
     return gBooks.reduce(
         (priceMap, book) => {
             if (book.price > 180) priceMap.fast++
-            else if (book.price > 100) priceMap.medium++
-            else priceMap.slow++
+                else if (book.price > 100) priceMap.medium++
+                    else priceMap.slow++
 
-            return priceMap
-        },
-        { fast: 0, medium: 0, slow: 0 }
+                        return priceMap
+        }, { fast: 0, medium: 0, slow: 0 }
     )
 }
 
@@ -65,7 +64,7 @@ function getBooksByBookName() {
         if (!bookNameMap[book.bookName]) bookNameMap[book.bookName] = 1
         else bookNameMap[book.bookName]++
 
-        return bookNameMap
+            return bookNameMap
     }, {})
 }
 
@@ -85,7 +84,7 @@ function addBook(bookName) {
 }
 
 function getBookById(bookId) {
-    return gBooks.find((book) => bookId === book.id)
+    return gBooks.find((book) => +bookId === book.id)
 }
 
 function updateBook(bookId, newPrice) {
@@ -119,7 +118,7 @@ function isPrevBtnDisabled() {
 }
 
 function isNextBtnDisabled() {
-    return ((gCurrPageIdx+1) * PAGE_SIZE) >= gBooks.length
+    return ((gCurrPageIdx + 1) * PAGE_SIZE) >= gBooks.length
 }
 
 function _createBook(bookName) {

@@ -5,34 +5,6 @@ function onInit() {
     renderBookNames()
     renderBooks()
 }
-//table
-// function renderBooks() {
-//     var books = getBooks()
-//     console.log('books: ', books)
-
-//     var strHtmls = books.map(
-//         (book) => `
-//         <article class="book-preview">
-//             <button title="Delete book" class="btn-remove" onclick="onRemoveBook('${book.id}')">X</button>
-            
-//             <h2>${book.bookName}</h2>
-//             <p>Price: <span>${book.price}$</span> </p>
-//             <p>Rate: <span>${book.rate}</span> </p>
-            
-//             <button onclick="onReadBook('${book.id}')">Details</button>
-//             <button onclick="onUpdateBook('${book.id}')">Update</button>
-
-//             <img title="Photo of ${book.bookName}" 
-//                 src="img/${book.bookName}.png" 
-//                 alt="Book by ${book.bookName}"
-//                 onerror="this.src='img/default.png'">
-//         </article> 
-//     `
-//     )
-//     document.querySelector('.books-container').innerHTML = strHtmls.join('')
-//     renderPagesBtn()
-// }
-
 //cards
 // function renderBooks() {
 //     var books = getBooks()
@@ -40,9 +12,6 @@ function onInit() {
 
 //     var strHtmls = books.map(
 //         (book) => `
-
-
-
 //         <article class="book-preview">
 //             <button title="Delete book" class="btn-remove" onclick="onRemoveBook('${book.id}')">X</button>
             
@@ -60,18 +29,49 @@ function onInit() {
 //         </article> 
 //     `
 //     )
-//     document.querySelector('.books-container').innerHTML = strHtmls.join('')
+//     document.querySelector('.books-container-cards').innerHTML = strHtmls.join('')
 //     renderPagesBtn()
 // }
+
+// table
+function renderBooks() {
+    var books = getBooks()
+    console.log('books: ', books)
+
+    var strHtmls = books.map(
+        (book) => `
+
+
+
+        <article class="book-preview">
+            <button title="Delete book" class="btn-remove" onclick="onRemoveBook('${book.id}')">X</button>
+
+            <h2>${book.bookName}</h2>
+            <p>Price: <span>${book.price}$</span> </p>
+            <p>Rate: <span>${book.rate}</span> </p>
+
+            <button onclick="onReadBook('${book.id}')">Details</button>
+            <button onclick="onUpdateBook('${book.id}')">Update</button>
+
+            <img title="Photo of ${book.bookName}" 
+                src="img/${book.bookName}.png" 
+                alt="Book by ${book.bookName}"
+                onerror="this.src='img/default.png'">
+        </article> 
+    `
+    )
+    document.querySelector('.books-container').innerHTML = strHtmls.join('')
+    renderPagesBtn()
+}
 
 function renderPagesBtn() {
     var elPrevPage = document.querySelector('.prevPage')
     var elNextPage = document.querySelector('.nextPage')
 
     elPrevPage.disabled = isPrevBtnDisabled()
-        
+
     elNextPage.disabled = isNextBtnDisabled()
-       
+
 }
 
 function renderBookNames() {
@@ -88,6 +88,7 @@ function onNextPage() {
     nextPage()
     renderBooks()
 }
+
 function onPrevPage() {
     prevPage()
     renderBooks()
@@ -120,7 +121,9 @@ function onUpdateBook(bookId) {
 }
 
 function onReadBook(bookId) {
+    console.log('bookId', bookId)
     const book = getBookById(bookId)
+
     const elModal = document.querySelector('.modal')
 
     elModal.querySelector('h3').innerText = book.bookName
